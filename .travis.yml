@@ -1,9 +1,16 @@
 language: ruby
 cache: bundler
 rvm:
-  - 2.2.2
+- 2.2.2
 before_install:
-  - gem install bundler
+- gem install bundler
 before_script:
-  - bundle install
+- bundle install
 script: bundle exec rake
+deploy:
+  provider: heroku
+  api_key:
+    secure: wRQj+UAYMH9L69e1V/6nk2L4VLDOcjbBSrwh5m8bxL09q19r4KClCLE0vXyZE0XwEvqMWM7oyKOgK4G1Z9crcQHWy90rNSYX69YblImU+Px7A+t07vqXy6r7+eCzcwQT7aY8gWHMomFH7Yv0zZu7ENKOdRIU/HkkpZVGuXXy8rIJLZN//heYSj0Xn0ux8dKBVV/BAY/vzKWat+VFWrMGCubpaLbmGJew0Qb1npaEkyVCQ653S/TDJ8KuQPUOH5an05IjVORMcYmiV8afbJ9MJb99UH18VGmZOcmFD1lwfT8NcpfBeg9dl6xUqnktX2Vg68aZydp/pFrOsh7WxI0hcFOa0FqCPuD83tFmu+XoMsZPK315CSwHL4Zfm8fFBth9bHuT5IHnogkYGoVVJrGi6gKiJY74QEJPevpzbucrOGXvJpNPZriSyGf/0Z3Xjj1ErHhoqJbgTib9b5g6KfgSptbNjuiDS0TYLo7CsKeh3Nc2vT9idrW0M6wmm8gXnm2GHyOOBw0mFltby3KoX/UTeCIL1UGr8I3MxfQsrKjD6/QWSuASrs3ACGyR3a97Mv0LbxydobIafWbnzmSTF/bzsMg3p20gOktIZ5PJQUfcFRdM3H47DO0LAwAZZTmkFjrqXmaqp9YJ0pP3SgybboZ44aH72q0khBEu55wn8AkRQBk=
+  app: YelpDemo
+  on:
+    repo: EGiataganas/YelpDemo
