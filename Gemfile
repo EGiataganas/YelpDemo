@@ -17,6 +17,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'figaro'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'
