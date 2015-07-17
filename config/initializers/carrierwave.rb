@@ -1,28 +1,17 @@
-if Rails.env.production?
-  CarrierWave.configure do |config|
+CarrierWave.configure do |config|
+  if ENV['S3_KEY'] && ENV['S3_SECRET'] && ENV['S3_BUCKET_NAME']
+    config.storage = :fog
     config.fog_credentials = {
-      provider:              'AWS',                        # required
-      aws_access_key_id:     ENV['aws_access_key_id'],                        # required
-      aws_secret_access_key: ENV['aws_secret_access_key'],                        # required,
-      endpoint:              ENV['aws_endpoint'],
-      region:               ENV['aws_region'] 
+      provider: 'AWS',
+      aws_access_key_id: ENV['S3_KEY'],
+      aws_secret_access_key: ENV['S3_SECRET'],
+      region: ENV['S3_REGION']
     }
- 
-    # For testing, upload files to local `tmp` folder.
-    if Rails.env.test? || Rails.env.cucumber?
-      config.storage = :file
-      config.enable_processing = false
-      config.root = "#{Rails.root}/tmp"
-    else
-      config.storage = :fog
-    end
-   
-    config.cache_dir = "#{Rails.root}/tmp/uploads"                  # To let CarrierWave work on heroku
-   
-    config.fog_directory    = ENV['fog_directory']
-    config.s3_access_policy = :public_read                          # Generate http:// urls. Defaults to :authenticated_read (https://)
-    config.fog_host         = "#{ENV['aws_endpoint']}/#{ENV['fog_directory']}"
-
-    config.fog_directory  = ENV['fog_directory']                          # required
+    config.fog_directory  = ENV['S3_BUCKET_NAME']
+  elsif Rails.env.test?
+    config.storage = :file
+    config.enable_processing = false
+  else
+    config.storage = :file
   end
 end
