@@ -4,7 +4,7 @@ if Rails.env.production?
       provider:              'AWS',                        # required
       aws_access_key_id:     ENV['aws_access_key_id'],                        # required
       aws_secret_access_key: ENV['aws_secret_access_key'],                        # required,
-      endpoint:              "https://s3.amazonaws.com",
+      endpoint:              ENV['aws_endpoint'],
       region:               ENV['aws_region'] 
     }
     config.fog_directory  = ENV['fog_directory']                          # required
