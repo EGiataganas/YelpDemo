@@ -15,7 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
 gem 'carrierwave'
-gem 'fog-aws'
+gem 'fog', require: 'fog/aws'
 gem 'figaro'
 gem 'mini_magick'
 
