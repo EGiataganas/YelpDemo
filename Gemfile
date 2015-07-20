@@ -17,6 +17,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'fog', require: 'fog/aws'
 gem 'figaro'
 gem 'mini_magick'
+gem 'devise'
 
 gem 'carrierwave',
   git: 'https://github.com/carrierwaveuploader/carrierwave.git',
