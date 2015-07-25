@@ -52,12 +52,12 @@ RSpec.describe RestaurantsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new restaurant as @restaurant" do
-      get :new, {}, valid_session
-      expect(assigns(:restaurant)).to be_a_new(Restaurant)
-    end
-  end
+  # describe "GET #new" do
+  #   it "assigns a new restaurant as @restaurant" do
+  #     get :new, {}, valid_session
+  #     expect(assigns(:restaurant)).to be_a_new(Restaurant)
+  #   end
+  # end
 
   describe "GET #edit" do
     it "assigns the requested restaurant as @restaurant" do
