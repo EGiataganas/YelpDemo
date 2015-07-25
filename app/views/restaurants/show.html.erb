@@ -42,7 +42,7 @@
                 <h4>
                   <%= "#{review.user.first_name} #{review.user.last_name[0]}." %>
                 </h4>
-                <p><%= review.created_at %></p>
+                <p><%= review.created_at.strftime("%-m/%-d/%y") %></p>
               </td>
               <td>
                 <div class="star-rating" data-score=<%= review.rating %>></div>
