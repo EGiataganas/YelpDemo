@@ -5,7 +5,7 @@ class Restaurant < ActiveRecord::Base
 
   validates :name, :address, :phone, :website, :image, presence: true
   
-  validates :address, format: { with: /\\A\d+[^,]+,[^,]+, [A-Z]{2} \d{5}\z/,
+  validates :address, format: { with: /\A\d+[^,]+,[^,]+, [A-Z]{2} \d{5}\z/,
     message: "must be in the format 350 Fith Avenue, New York, NY 10118" }
   validates :phone, format: { with: /\A\(\d{3}\) \d{3}\-\d{4}\z/,
     message: "must be in the format (123) 456-7890" }
