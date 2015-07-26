@@ -18,6 +18,7 @@ gem 'fog', require: 'fog/aws'
 gem 'figaro'
 gem 'mini_magick'
 gem 'devise'
+gem 'searchkick'
 
 gem 'carrierwave',
   git: 'https://github.com/carrierwaveuploader/carrierwave.git',
